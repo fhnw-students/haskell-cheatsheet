@@ -308,4 +308,9 @@ diffSumme x y list = ds (findDiff x list) (findDiff y list)
   where ds [] _ = []
         ds _ [] = []
         ds (x:_) (y:_) = [x + y]
+-----------------------------------------------------        
+rep :: Int -> [Int] -> [Int]
+rep a l = concat (map (\i -> if i == a
+                                then [i,i]
+                                else [i]) l)
 ```
