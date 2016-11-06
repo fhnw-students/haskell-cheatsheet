@@ -245,7 +245,7 @@ zipWith filter :: [a -> Bool] -> [[a]] -> [[a]]
 tail.head.tail :: [[a]] -> [a]
 ```
 ## Examples
-```
+```haskell
 import Data.Char
 
 subjectSpam = "fuck credit is here"
