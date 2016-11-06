@@ -29,8 +29,8 @@ price (CheeseRoyal, Large) = 11 + 2;
 ```
 ## Tuples
 ```haskell
-ghci> fst (8,11)  // 8 
-ghci> snd (8,11)  //11  
+ghci> fst (8,11)  --8 
+ghci> snd (8,11)  --11  
 ```
 ## Lists
 ```haskell
@@ -38,17 +38,17 @@ ghci> [1,2,3,4] ++ [9,10,11,12]
 ghci> "hello" ++ " " ++ "world"
 ghci> 5:[1,2,3,4,5]  
 
-//If you want to get an element out of a list by index, use !!. The indices start at 0.
-ghci> [9.4,33.2,96.2,11.2,23.25] !! 1  //33.2
-ghci> head [5,4,3,2,1]                 //5  
-ghci> tail [5,4,3,2,1]                 //[4,3,2,1]
-ghci> last [5,4,3,2,1]                 //1  
-ghci> init [5,4,3,2,1]                 //[5,4,3,2]  
-ghci> length [5,4,3,2,1]               //5 
-ghci> null []                          //True 
-take 3 [5,4,3,2,1]                     //[5,4,3] 
-drop 3 [8,4,2,1,5,6]                   //[1,5,6]  
-ghci> 4 `elem` [3,4,5,6]               //True  
+--If you want to get an element out of a list by index, use !!. The indices start at 0.
+ghci> [9.4,33.2,96.2,11.2,23.25] !! 1  --33.2
+ghci> head [5,4,3,2,1]                 --5  
+ghci> tail [5,4,3,2,1]                 --[4,3,2,1]
+ghci> last [5,4,3,2,1]                 --1  
+ghci> init [5,4,3,2,1]                 --[5,4,3,2]  
+ghci> length [5,4,3,2,1]               --5 
+ghci> null []                          --True 
+take 3 [5,4,3,2,1]                     --[5,4,3] 
+drop 3 [8,4,2,1,5,6]                   --[1,5,6]  
+ghci> 4 `elem` [3,4,5,6]               --True  
 ```
 ## Functions
 ```haskell
@@ -71,7 +71,7 @@ compareCase x y = case x < y of
     True -> EQ
     otherwise -> GT
     
-//
+--
 maximumG :: Int -> Int -> Int
 maximumG a b | a >= b = a
              | a < b = b
@@ -213,7 +213,7 @@ quicksort (x:xs) =
 deleteDuplicates :: (Eq a) => [a] -> [a]
 deleteDuplicates [] = []
 deleteDuplicates (a:list)
-  | hasElement list a = deleteDuplicates list // or elem'
+  | hasElement list a = deleteDuplicates list -- or elem'
   | otherwise = (deleteDuplicates list) ++ [a]
 ```
 ## Useful Functions
@@ -245,7 +245,7 @@ concat :: Foldable t => t [a] -> [a]
 elem :: (Foldable t, Eq a) => a -> t a -> Bool
 and :: Foldable t => t Bool -> Bool
 sum :: (Foldable t, Num a) => t a -> a
-(!!) :: [a] -> Int -> a // Get element by index
+(!!) :: [a] -> Int -> a -- Get element by index
 zipWith filter :: [a -> Bool] -> [[a]] -> [[a]]
 tail.head.tail :: [[a]] -> [a]
 ```
