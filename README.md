@@ -218,14 +218,9 @@ deleteDuplicates (a:list)
 ```
 ## Useful Functions
 ```haskell
-ghci> zip [1,2,3,4,5] [5,5,5,5,5]  
-[(1,5),(2,5),(3,5),(4,5),(5,5)]
-
-ghci> show 3  
-"3"  
-
-ghci> read "True" || False  
-True  
+ghci> zip [1,2,3,4,5] [5,5,5,5,5]  --[(1,5),(2,5),(3,5),(4,5),(5,5)]
+ghci> show 3                       --"3"  
+ghci> read "True" || False         --True  
 ```
 
 ```haskell
