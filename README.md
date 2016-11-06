@@ -50,6 +50,17 @@ take 3 [5,4,3,2,1]                     --[5,4,3]
 drop 3 [8,4,2,1,5,6]                   --[1,5,6]  
 ghci> 4 `elem` [3,4,5,6]               --True  
 ```
+##Präzedenz (absteigend)
+```haskell
+((f a) b) infixl
+(.) infixr
+(^) infixr
+(*) (/) infixl
+(+) (-) infixl
+(++) (:) infixr
+(==) (/=) (<) (>) (<=) (>=) infix (&&) infixr
+(||) infixr
+```
 ## Functions
 ```haskell
 compareIf :: (Ord a) => a -> a -> Ordering
@@ -220,7 +231,10 @@ deleteDuplicates (a:list)
 ```haskell
 ghci> zip [1,2,3,4,5] [5,5,5,5,5]  --[(1,5),(2,5),(3,5),(4,5),(5,5)]
 ghci> show 3                       --"3"  
-ghci> read "True" || False         --True  
+ghci> read "True" || False         --True 
+
+(2+) interpreted as \y -> 2+y 
+(+3) interpreted as \x -> x+3
 ```
 
 ```haskell
