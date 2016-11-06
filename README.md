@@ -29,11 +29,8 @@ price (CheeseRoyal, Large) = 11 + 2;
 ```
 ## Tuples
 ```haskell
-ghci> fst (8,11)  
-8 
-
-ghci> snd (8,11)  
-11  
+ghci> fst (8,11)  // 8 
+ghci> snd (8,11)  //11  
 ```
 ## Lists
 ```haskell
@@ -42,35 +39,16 @@ ghci> "hello" ++ " " ++ "world"
 ghci> 5:[1,2,3,4,5]  
 
 //If you want to get an element out of a list by index, use !!. The indices start at 0.
-ghci> [9.4,33.2,96.2,11.2,23.25] !! 1  
-33.2
-
-ghci> head [5,4,3,2,1] 
-5  
-
-ghci> tail [5,4,3,2,1]  
-[4,3,2,1]
-
-ghci> last [5,4,3,2,1]  
-1  
-
-ghci> init [5,4,3,2,1]  
-[5,4,3,2]  
-
-ghci> length [5,4,3,2,1]  
-5 
-
-ghci> null []  
-True 
-
-take 3 [5,4,3,2,1]  
-[5,4,3] 
-
-drop 3 [8,4,2,1,5,6]  
-[1,5,6]  
-
-ghci> 4 `elem` [3,4,5,6]  
-True  
+ghci> [9.4,33.2,96.2,11.2,23.25] !! 1  //33.2
+ghci> head [5,4,3,2,1]                 //5  
+ghci> tail [5,4,3,2,1]                 //[4,3,2,1]
+ghci> last [5,4,3,2,1]                 //1  
+ghci> init [5,4,3,2,1]                 //[5,4,3,2]  
+ghci> length [5,4,3,2,1]               //5 
+ghci> null []                          //True 
+take 3 [5,4,3,2,1]                     //[5,4,3] 
+drop 3 [8,4,2,1,5,6]                   //[1,5,6]  
+ghci> 4 `elem` [3,4,5,6]               //True  
 ```
 ## Functions
 ```haskell
