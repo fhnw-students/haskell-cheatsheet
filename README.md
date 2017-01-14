@@ -353,6 +353,8 @@ loop = do
     then
       putStr "Result: " ++ (eval $ parseBExp command)
       loop
+    else
+      putStr "Bye Bye"
 ```
 
 # DataTypes
