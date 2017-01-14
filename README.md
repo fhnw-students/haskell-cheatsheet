@@ -355,9 +355,76 @@ loop = do
       loop
 ```
 
+# DataTypes
 ```haskell
+data Expr = Const Int
+          | Add Expr Expr
+          | Mul Expr Expr
+          deriving (Show, Eq)
+          
+eval :: Expr -> Int
+eval (Const n) = n
+eval (Add l r) = eval l + eval r
+eval (Mul l r) = eval l * eval r
 ```
 
 ```haskell
+data Account = Account String [Mutation]
+data Mutation = Deposit Int
+              | Withdraw Int
+
+instance Show Account where
+  show (Account name ms) = name ++ " : " ++ (show (balance (Account name ms)))
 ```
 
+# TypeClass
+```haskell
+data JSON = JSeq [JSON]
+          | JObj [JBinding] 
+          | JNum Double
+          | JStr String
+          | JBool Bool
+          | JNull
+          deriving (Show, Eq)
+type JBinding = (String,JSON)
+```
+
+```haskell
+class ToJSON a where
+  toJSON :: a -> JSON
+
+instance ToJSON Bool where
+ toJSON b = JBool b
+
+instance ToJSON Double where
+  toJSON f = JNum f
+
+instance ToJSON Int where
+  toJSON i = JNum (fromIntegral i)
+```
+
+```haskell
+instance Show Point where
+  show (XY x y) = "P(x=" ++ show x ++ ",y=" ++ show y ++ ")"
+
+instance Eq Point where
+  (XY x1 y1) == (XY x2 y2) = x1 == x2 && y1 == y2
+
+instance Ord Point where
+  (XY x1 y1) <= (XY x2 y2) = (x1 < x2) || ((x1 == x2) && (y1 <= y2))
+
+instance Eq Figure where
+  (Circle p1 r1) == (Circle p2 r2) = p1 == p2 && r1 == r2
+  (Line p1 p2)   == (Line q1 q2)   = p1 == q1 && p2 == q2
+  _              == _              = False
+```
+
+## Modules
+```haskell
+module Geometry 
+(circleArea 
+,circlePerimeter 
+,squareArea 
+,squarePerimeter 
+) where
+```
