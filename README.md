@@ -314,3 +314,50 @@ rep a l = concat (map (\i -> if i == a
                                 then [i,i]
                                 else [i]) l)
 ```
+
+```haskell
+rem :: Int -> [Int] -> [Int]
+rem a ls = concat (map (\x -> if x == a
+                                then []
+                                else [x]) ls)
+```
+
+```haskell
+data Bit = Zero | One deriving (Eq)
+toInt :: Bit -> Int
+toInt a 
+  | a == Zero = 0
+  | otherwise = 1
+```
+
+```haskell
+substring :: String -> Int -> Int -> String
+substring [] _ _ = []
+substring xs 0 0 = xs
+substring [x:xs] o len = substring (tail xs) 0 (len-1)
+substring [x:xs] from len = substring xs (from-1) len
+
+```
+
+# IO
+
+## Quit Example
+```haskell
+main = do
+  loop
+
+loop = do
+  putStrLn "Enter an expression or ':quit' to terminate"
+  command <- getLine
+  if command \= ":quit"
+    then
+      putStr "Result: " ++ (eval $ parseBExp command)
+      loop
+```
+
+```haskell
+```
+
+```haskell
+```
+
