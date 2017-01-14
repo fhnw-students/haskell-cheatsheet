@@ -383,6 +383,8 @@ type JBinding = (String,JSON)
 ```
 
 ```haskell
+{-# LANGUAGE FlexibleInstances #-}
+
 class ToJSON a where
   toJSON :: a -> JSON
 
