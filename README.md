@@ -368,15 +368,6 @@ eval (Add l r) = eval l + eval r
 eval (Mul l r) = eval l * eval r
 ```
 
-```haskell
-data Account = Account String [Mutation]
-data Mutation = Deposit Int
-              | Withdraw Int
-
-instance Show Account where
-  show (Account name ms) = name ++ " : " ++ (show (balance (Account name ms)))
-```
-
 # TypeClass
 ```haskell
 data JSON = JSeq [JSON]
